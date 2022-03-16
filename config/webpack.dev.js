@@ -17,8 +17,15 @@ module.exports = merge(base, {
         warnings: false,
       },
     },
+    static: {
+      directory: path.join(__dirname, '../public'),
+    },
   },
   plugins: [
     new WebpackBar(),
   ],
+  stats: {
+    assets: false,
+    modules: false,
+  },
 })
