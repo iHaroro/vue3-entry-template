@@ -19,13 +19,9 @@ module.exports = merge(base, {
         parallel: true,
         extractComments: false,
       }),
-    ],
-    runtimeChunk: {
-      name: entryPoint => {
-        console.log(entryPoint)
-        return 'manifest'
-      },
-    },
+    ], // runtimeChunk: {
+    //   name: entryPoint => 'manifest',
+    // },
     splitChunks: {
       chunks: 'async',
       minSize: 30000, // 生成 chunk 的最小体积（以 bytes 为单位）

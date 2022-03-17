@@ -27,5 +27,6 @@ module.exports = merge(base, {
   stats: {
     assets: false,
     modules: false,
+    children: false,
   },
 })

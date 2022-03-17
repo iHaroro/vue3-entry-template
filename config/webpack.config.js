@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const {
@@ -19,21 +18,35 @@ module.exports = {
       {
         test: /\.vue$/,
         include: path.resolve(__dirname, '../src'),
-        use: 'vue-loader',
-      },
-      {
-        test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          {
+            loader: 'vue-loader',
+            options: {},
+          },
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.(css|less)$/,
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader', // 处理兼容，px2rem等
           'less-loader',
+          {
+            loader: 'style-resources-loader',
+            options: {
+              patterns: path.resolve(__dirname, '../src/assets/css/global.less'),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
         ],
       },
       {

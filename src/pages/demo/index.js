@@ -1,3 +1,5 @@
+import '@/assets/css/reset.less'
+import 'amfe-flexible'
 import { createApp } from 'vue'
 import App from './App.vue'
 

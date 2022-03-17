@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-content">demo a component</div>
+  <div class="demo-content">demo b component</div>
 </template>
 <script>
 export default {
@@ -10,6 +10,6 @@ export default {
 </script>
 <style lang="less" scoped>
 .demo-content {
-  background: greenyellow;
+  background: red;
 }
 </style>

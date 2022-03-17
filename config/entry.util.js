@@ -14,9 +14,7 @@ const devPages = []
 // const devPages = ['demo', 'wechat', 'tiktok']
 
 // 通用依赖
-const COMMON_VENDORS = [
-  'vue',
-]
+const COMMON_VENDORS = []
 const COMMON_VENDORS_FILENAME = 'vendors'
 
 /**
