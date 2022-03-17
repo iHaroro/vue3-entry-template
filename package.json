@@ -7,13 +7,14 @@
   "main": "src/pages/demo/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack server --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "dev": "webpack server --config config/webpack.dev.config.js",
+    "build": "webpack --config config/webpack.prod.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
     "@babel/preset-env": "^7.16.11",
     "@vue/compiler-sfc": "^3.2.31",
+    "add-asset-html-webpack-plugin": "^5.0.1",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -38,6 +39,9 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
-    "vue": "^3.2.31"
+    "axios": "^0.26.1",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
   }
 }
