@@ -1,6 +1,6 @@
 <template>
   <div class="page-content">
-    PAGE：WECHAT
+    PAGE：INDEX
     <a-component />
   </div>
 </template>
