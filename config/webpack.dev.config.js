@@ -1,7 +1,6 @@
 const base = require('./webpack.config')
 const path = require('path')
 const { merge } = require('webpack-merge')
-const WebpackBar = require('webpackbar')
 
 module.exports = merge(base, {
   mode: 'development',
@@ -21,9 +20,6 @@ module.exports = merge(base, {
       directory: path.join(__dirname, '../public'),
     },
   },
-  plugins: [
-    new WebpackBar(),
-  ],
   stats: {
     assets: false,
     modules: false,

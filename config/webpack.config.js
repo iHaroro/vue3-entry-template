@@ -1,4 +1,6 @@
 const path = require('path')
+const WebpackBar = require('webpackbar')
+const { DefinePlugin } = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const {
@@ -85,6 +87,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new WebpackBar(),
+    new DefinePlugin({
+      __VUE_OPTIONS_API__: false, // 禁用Option API
+      __VUE_PROD_DEVTOOLS__: false, // 禁用生成环境的Devtools
+    }),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     ...getHtmlPluginEntry(),

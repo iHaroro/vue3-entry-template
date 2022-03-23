@@ -1,14 +1,10 @@
 const base = require('./webpack.config')
 const { merge } = require('webpack-merge')
-const WebpackBar = require('webpackbar')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') // 对CSS进行压缩插件
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(base, {
   mode: 'production',
-  plugins: [
-    new WebpackBar(),
-  ],
   optimization: {
     usedExports: true, // 去除未使用的导出内容等无用代码
     minimize: true, // 压缩代码
