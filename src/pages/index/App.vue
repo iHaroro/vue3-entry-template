@@ -1,31 +1,8 @@
 <template>
-  <div class="page-content">
-    PAGE：INDEX
-    <a-component />
+  <div>
+    <router-view />
   </div>
 </template>
 <script>
-import AComponent from '@/pages/demo/components/DemoComponent'
-
-export default {
-  components: {
-    AComponent,
-  },
-  setup () {
-    const fn = () => console.log('fn running')
-    return { fn }
-  },
-}
+export default {}
 </script>
-<style lang="less" scoped>
-.page-content {
-  .title {
-    background: #3ca877;
-
-  }
-
-  .sub-title {
-    background: #FFC527;
-  }
-}
-</style>
