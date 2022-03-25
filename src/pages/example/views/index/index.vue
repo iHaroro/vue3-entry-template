@@ -4,6 +4,8 @@
     <p>{{ name }}</p>
     <p>{{ obj }}</p>
     <p>{{ readonlyData }}</p>
+    <button @click="router.push('/page1')">page1</button>
+    <button @click="router.push('/page2')">page2</button>
   </div>
 </template>
 
@@ -13,10 +15,12 @@ import {
   reactive,
   readonly,
 } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'index',
   setup () {
+    const router = useRouter()
     let name = ref('haroro')
     let obj = reactive({
       a: 1,
@@ -31,6 +35,7 @@ export default {
       name,
       obj,
       readonlyData,
+      router,
     }
   },
 }
