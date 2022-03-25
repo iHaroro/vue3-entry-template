@@ -1,4 +1,4 @@
-import Index from '@/pages/example/views/index'
+import index from '../views/index'
 
 export const routes = [
   {
@@ -11,7 +11,7 @@ export const routes = [
     meta: {
       title: '首页',
     },
-    component: Index,
+    component: index,
   },
   {
     path: '/page1',
