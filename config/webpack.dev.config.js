@@ -16,9 +16,11 @@ module.exports = merge(base, {
         warnings: false,
       },
     },
-    static: {
-      directory: path.join(__dirname, '../public'),
-    },
+    static: [
+      {
+        directory: path.join(__dirname, '../public'),
+      },
+    ],
   },
   stats: {
     assets: false,

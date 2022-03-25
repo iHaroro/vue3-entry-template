@@ -45,10 +45,9 @@ const pathMatchEntryName = path => {
  **/
 const createHtmlPlugin = (entryName, templateFile) => {
   return new HtmlWebpackPlugin({
-    // filename: `${entryName}/index.html`, // 生成的html模板文件名
-    filename: `${entryName}.html`, // 生成的html模板文件名
+    filename: `${entryName}/index.html`, // 生成的html模板文件名
     template: templateFile || TEMP_HTML_PATH, // 模板html路径
-    publicPath: './',
+    publicPath: './../',
     chunks: [
       COMMON_VENDORS_FILENAME,
       entryName,
@@ -60,8 +59,10 @@ const createHtmlPlugin = (entryName, templateFile) => {
 
 // 处理公共模块配置
 function getCommonEntryOption (entryFile) {
+  const entryName = pathMatchEntryName(entryFile)
   let option = {
     import: entryFile,
+    filename: '[name]/index.[chunkhash].js',
   }
   COMMON_VENDORS.length && (option.dependOn = COMMON_VENDORS_FILENAME)
   return option
