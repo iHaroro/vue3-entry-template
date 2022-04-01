@@ -97,13 +97,13 @@ module.exports = {
     ...getHtmlPluginEntry(),
   ],
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '..', 'src'),
+    },
     extensions: [
       '.js',
       '.json',
       '.vue',
     ],
-    alias: {
-      '@': path.resolve(__dirname, '..', 'src'),
-    },
   },
 }

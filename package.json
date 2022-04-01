@@ -4,7 +4,7 @@
   "author": "Haroro",
   "private": true,
   "description": "Vue.v3 + Webpack.v5 多入口H5项目模板",
-  "main": "src/pages/demo/index.js",
+  "main": "src/modules/demo/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "webpack server --config config/webpack.dev.config.js",

@@ -1,24 +1,30 @@
 <template>
   <div>
-    index
+    <p>index</p>
     <p>{{ name }}</p>
     <p>{{ obj }}</p>
     <p>{{ readonlyData }}</p>
     <button @click="router.push('/page1')">page1</button>
     <button @click="router.push('/page2')">page2</button>
+    <WechatComponent />
   </div>
 </template>
 
 <script>
+import WechatComponent from '../../components/WechatComponent'
+import { useRouter } from 'vue-router'
 import {
   ref,
   reactive,
   readonly,
+  provide,
 } from 'vue'
-import { useRouter } from 'vue-router'
 
 export default {
   name: 'index',
+  components: {
+    WechatComponent,
+  },
   setup () {
     const router = useRouter()
     let name = ref('haroro')
@@ -31,6 +37,8 @@ export default {
       desc: 'this is readonly string',
     })
 
+    provide('msg', '12345')
+
     return {
       name,
       obj,
@@ -39,6 +47,7 @@ export default {
     }
   },
 }
+
 </script>
 <style scoped>
 div {

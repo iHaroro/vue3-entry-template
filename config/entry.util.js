@@ -8,7 +8,7 @@ const {
 } = require('./config')
 
 // 开发环境需要编译的模块， 空数组则全部遍历编译
-// 取值为src/pages/[name]/...路径中的name
+// 取值为src/modules/[name]/...路径中的name
 const devPages = []
 // const devPages = ['demo', 'wechat']
 // const devPages = ['demo', 'wechat', 'tiktok']
@@ -31,7 +31,7 @@ const getEntryFileByType = (type, entryName) => glob.sync(`${PAGES_PATH}/${entry
  * @returns {string} 入口名称
  **/
 const pathMatchEntryName = path => {
-  const match = path.match(/\/src\/pages\/(\S*)\/index\.[\w]+/)
+  const match = path.match(/\/src\/modules\/(\S*)\/index\.[\w]+/)
   return match.length
     ? match[1]
     : null
