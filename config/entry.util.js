@@ -14,7 +14,9 @@ const devPages = []
 // const devPages = ['demo', 'wechat', 'tiktok']
 
 // 通用依赖
-const COMMON_VENDORS = []
+const COMMON_VENDORS = [
+  path.resolve(__dirname, '../src/assets/js/common.js'),
+]
 const COMMON_VENDORS_FILENAME = 'vendors'
 
 /**

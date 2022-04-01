@@ -89,8 +89,8 @@ module.exports = {
   plugins: [
     new WebpackBar(),
     new DefinePlugin({
-      __VUE_OPTIONS_API__: false, // 禁用Option API
-      __VUE_PROD_DEVTOOLS__: false, // 禁用生成环境的Devtools
+      __VUE_OPTIONS_API__: true, // 是否禁用Option API
+      __VUE_PROD_DEVTOOLS__: false, // 是否禁用生成环境的Devtools
     }),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
